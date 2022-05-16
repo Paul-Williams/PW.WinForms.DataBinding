@@ -1,7 +1,7 @@
 ﻿namespace PW.WinForms.DataBinding;
 
 /// <summary>
-/// This class contains common function for handling conversion of bound data.
+/// This class contains common functions for handling conversion of bound data.
 /// The class will need to be extended to handle additional conversions, as required.
 /// </summary>
 public static class ConvertEventHandlers
@@ -10,20 +10,20 @@ public static class ConvertEventHandlers
   /// <summary>
   /// Creates a <see cref="ConvertEventHandler"/> to convert a boolean value to a color.
   /// </summary>
-  public static ConvertEventHandler BoolToColor(System.Drawing.Color trueColor, System.Drawing.Color falseColor)
+  public static ConvertEventHandler BoolToColor(Color trueColor, Color falseColor)
     => (o, e) => { if (e.Value is bool value) e.Value = value == true ? trueColor : falseColor; };
 
   /// <summary>
-  /// A binding event handler to switch bool value: true->false and false->true.
+  /// A binding event handler to toggle bool value: true->false and false->true.
   /// </summary>
-  public static void NotBool(object? sender, ConvertEventArgs e)
+  public static void ToggleBool(object? sender, ConvertEventArgs e)
   {
     if (e.Value is bool value) e.Value = !value;
   }
 
 
   /// <summary>
-  /// A binding event handler to convert empty and white-space string values back to null.
+  /// A binding event handler to convert empty and white-space string values to null.
   /// </summary>
   public static void EmptyStringToNull(object? sender, ConvertEventArgs e)
   {
