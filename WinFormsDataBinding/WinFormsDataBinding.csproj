@@ -10,6 +10,10 @@
     <RootNamespace>PW.WinForms.DataBinding</RootNamespace>
     <Title>DataBindings for WinForms</Title>
     <NeutralLanguage>en-GB</NeutralLanguage>
+    <Authors>Paul Williams</Authors>
+    <Company>PWDevS</Company>
+    <PackageProjectUrl>https://github.com/Paul-Williams/PW.WinForms.DataBinding</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Paul-Williams/PW.WinForms.DataBinding</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
