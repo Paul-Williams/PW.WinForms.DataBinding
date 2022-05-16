@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+		<LangVersion>preview</LangVersion>
+		<UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>		
+    <Nullable>enable</Nullable>
+    <AssemblyName>PW.WinForms.DataBinding</AssemblyName>
+    <RootNamespace>PW.WinForms.DataBinding</RootNamespace>
+    <Title>DataBindings for WinForms</Title>
+    <NeutralLanguage>en-GB</NeutralLanguage>
+  </PropertyGroup>
+
+</Project>
