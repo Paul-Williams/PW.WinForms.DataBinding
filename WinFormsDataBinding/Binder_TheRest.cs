@@ -94,13 +94,13 @@ public partial class Binder<TDataSource> where TDataSource : class
   /// Binds the list control to a sub-object on the data-source
   /// </summary>
   /// <param name="control">Control to be bound.</param>
-  /// <param name="toList">Function returning the property of <typeparamref name="TDataSource"/> to which to bind.</param>
-  /// <param name="toDisplayMember">Property of the data-source to display in the list.</param>
-  public Binder<TDataSource> BindList<TProperty>(ListControl control!!, Func<TDataSource, object> toList!!, string toDisplayMember!!)
+  /// <param name="dataSource">Function returning the property of <typeparamref name="TDataSource"/> to which to bind.</param>
+  /// <param name="displayMember">Property of the data-source to display in the list.</param>
+  public Binder<TDataSource> BindList(ListControl control!!, Func<TDataSource, object> dataSource!!, string displayMember!!)
   {
     control.DataSource = null;
-    control.DataSource = toList.Invoke(DataSource);
-    control.DisplayMember = toDisplayMember;
+    control.DataSource = dataSource.Invoke(DataSource);
+    control.DisplayMember = displayMember;
     return this;
   }
 
@@ -108,13 +108,14 @@ public partial class Binder<TDataSource> where TDataSource : class
   /// Binds the list control to a sub-object on the data-source
   /// </summary>
   /// <param name="control">Control to be bound.</param>
-  /// <param name="toList">Function returning the property of <typeparamref name="TDataSource"/> to which to bind.</param>
-  public Binder<TDataSource> BindList<TProperty>(ListControl control!!, Func<TDataSource, object> toList!!)
+  /// <param name="dataSource">Function returning the property of <typeparamref name="TDataSource"/> to which to bind.</param>
+  public Binder<TDataSource> BindList(ListControl control!!, Func<TDataSource, object> dataSource!!)
   {
     control.DataSource = null;
-    control.DataSource = toList.Invoke(DataSource);
+    control.DataSource = dataSource.Invoke(DataSource);
     return this;
   }
+
   /// <summary>
   /// Binds the <see cref="Control.Enabled"/> property to the opposite of the value of <paramref name="to"/>.
   /// </summary>
